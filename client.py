@@ -50,7 +50,7 @@ class Client:
 
     def add(self, playlist, tracks):
         tracks_url = [track.create_url() for track in tracks]
-        data = json.dumps(track_url)
+        data = json.dumps(tracks_url)
         url = f"https://api.spotify.com/v1/playlists/{playlist.id}/tracks"
         response = self.post_api(url, data)
         response_json = response.json()
